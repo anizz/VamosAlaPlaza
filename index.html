@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"  href="./reset.css"> 
+    <!-- ES IMPORTANTE QUE ESTE AQUI PUESTO, EN ESTE ORDEN. de esta manera, se resetean los estilos por defecto del navegador, y luego se aplican los estilos personalizados que yo quiero aplicar. Si lo pongo al revés, los estilos personalizados se van a sobreescribir por los estilos por defecto del navegador, y no se van a aplicar correctamente. 
+    https://meyerweb.com/eric/tools/css/reset/
+    -->
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://kit.fontawesome.com/f4b12b3ac3.js" crossorigin="anonymous"></script>
+
+    <title>Vamos a la plaza</title>
+</head>
+
+<body>
+
+    <div class="header"> 
+        
+        <div class="logo"><img src="./Imagenes/logo_con_nombre.png" alt="logo de la página"></div>
+        
+        <div class="navegador">
+            <ul>
+                <li>Opiná</li>
+                <li>Historia</li>
+                <li>Noticias</li>
+            </ul>
+        </div>
+        
+        <div class="login"> 
+            <div class="login-inner">
+                <img src="./Imagenes/avatar_frente.png" class="foto frente">
+                <img src="./Imagenes/avatar_dorso.png" class="foto dorso">
+            </div>
+           
+        </div>
+       
+    </div>
+    
+    <div class="hero"> 
+        <div class="hero_title">    
+        Econtrá tu próximo <br> espacio al aire libre
+        </div>
+    </div>
+        
+    <main> 
+        
+        <div class="filters"> <!--con qué nombre de section me conviene dejarlo?-->
+           
+             <form action="POST">
+                
+                
+                <label for="buscar" class="tituloFiltros"> ¿Qué plan andás buscando? </label>
+                <!-- al poner style display block, se acomodan uno abajo del otro, sino quedan por defecto en inline-->
+                    
+                    <div class="opcionesFiltros">
+                        <label for="relajar">
+                            <input type="checkbox" id="relajar" name="relajar" value="relajar">
+                            Relajar
+                        </label>
+                        
+                        <label for="ConAmigos"> 
+                            <input type="checkbox" id="ConAmigos" name="ConAmigos" value="ConAmigos">
+                            Ir con amigos
+                        </label>
+                        
+                        <label for="Ejercicio"> 
+                            <input type="checkbox" id="Ejercicio" name="Ejercicio" value="Ejercicio">
+                            Hacer ejercicio
+                        </label>
+                        
+                        <label for="Niños"> 
+                            <input type="checkbox" id="Niños" name="Niños" value="Niños">
+                            Ir con niños
+                        </label>
+                        
+                        <label for="mascotas"> 
+                            <input type="checkbox" id="mascotas" name="mascotas" value="mascotas">
+                            Ir con mascotas
+                        </label>
+                    </div>
+                    
+                    <div class="barraBuscador">
+                        <div class="ubicacion">
+                            <label for="ciudades"></label>
+                            <select name="ciudades" id="ciudades">
+                                <option value="" selected disabled>Explorar</option>
+                                <option value="Mendoza">Mendoza</option>
+                                <option value="Buenos Aires">Córdoba</option>
+                                <option value="Córdoba">San Luis</option>
+                                <option value="CABA">CABA</option>
+                            </select>
+                        </div>
+                        <div class="buscador">
+                            <label for="search"> </label>
+                            <button type="submit" id="buscarPlaza"> 🔍 </button>
+                            <input type="text" id="search" name="search" placeholder="Buscar por nombre de plaza o barrio">
+                            
+                        </div>
+                    </div>
+            </form>
+        
+        </div>
+        
+        <div class="espacios">
+             
+                <div class="espacioIzquierda"> Encontrá espacios verdes<br>que te encanten
+                <button id="VerMas"> ver más </button>
+                </div>
+                
+                <div class="espacioDerecha">
+                    <ul>
+                        <li> <img src="./Imagenes/ejemplo_derecha.jpg"> </li>
+                        <li> <img src="./Imagenes/carrusel1.jpg"> </li>
+                        <li> <img src="./Imagenes/carrusel2.png"> </li>
+                    </ul>
+                </div>
+        </div>
+        
+        <div class="opcionesSalidas">   
+            <div class="tituloCard">Encontrá el lugar adecuado para cada ocasión</div>
+            <div class="cardOpcion relajar" > <p>Relajar</p> </div>
+            <div class="cardOpcion chicos"> <p>Ir con <br> chicos</p> </div>    
+            <div class="cardOpcion deporte"> <p>Practicar deporte</p> </div>
+            <div class="cardOpcion mascotas"> <p>Ir con mascotas</p> </div>
+        </div>
+       
+        
+        <div class="seccionPlazas">
+            <button id="next_button"> <img src="./Imagenes/next.png"></button>
+            <div class="tituloCard">Espacios destacados</div>
+            
+            <div class="plaza">
+                    <div class="fotoPlaza1"> 
+                        <img src="./Imagenes/favorito_clic.png" alt="favorito" class="favorito">
+                        
+                        
+                    </div>
+                    <div class="nombrePlaza">Plaza 12 de febrero<br>Maipú, Mendoza</div>
+                    <!--<div class="corazones"></div>-->
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+            </div>
+
+            <div class="plaza">
+                    <div class="fotoPlaza2">
+                        <img src="./Imagenes/favorito_clic.png" alt="favorito" class="favorito">
+                      
+                    </div>
+                    <div class="nombrePlaza">Parque Canota<br>Maipú, Mendoza</div>
+                    <!--<div class="corazones"></div>-->
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+            </div>
+
+            <div class="plaza">
+                    <div class="fotoPlaza3">
+                        <img src="./Imagenes/favorito_clic.png" alt="favorito" class="favorito">
+                       
+                    </div>
+                    <div class="nombrePlaza">Plaza Independencia<br>Ciudad, Mendoza</div>
+                    <!--<div class="corazones"></div>-->
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+            </div>
+
+            <div class="plaza">
+                    <div class="fotoPlaza4">
+                        <img src="./Imagenes/favorito_clic.png" alt="favorito" class="favorito">
+                       
+                    </div>
+                    <div class="nombrePlaza">Parque Central<br>Ciudad, Mendoza</div>
+                    <!--<div class="corazones"></div>-->
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+            </div>
+
+
+        </div>
+
+    </main>
+    
+    <div class="footer">
+        
+            <div class="col primera">
+                <h1>Vamos a la Plaza</h1>
+                <p>Descubrí, explorá y opiná...</p>
+            </div>
+
+            <div class="col segunda">
+                <h1>Secciones</h1>
+                <ul>
+                    <li>Explorar</li>
+                    <li>Opiná</li>
+                    <li>Historia</li>
+                    <li>Noticias</li>
+                </ul>
+            </div>
+
+            <div class="col tercera">
+                <h1>Comunidad</h1>
+                <ul>
+                    <li>Sumá una plaza</li>
+                    <li>Dejá tu reseña</li>
+                    <li>Reportar estado</li>
+                </ul>
+            </div>
+
+            <div class="redes">
+                <ul>
+                    <li><!--<img src="./Imagenes/redes/face.png">--> <i class="fa-brands fa-square-facebook"></i></li>
+                    <li><!--<img src="./Imagenes/redes/equis.png">--> <i class="fa-brands fa-square-x-twitter"></i> </li>
+                    <li><i class="fa-brands fa-square-instagram"></i><!--<img src="./Imagenes/redes/instagram.png">--> </li>
+                </ul>
+            </div>
+        
+
+    </div>
+    
+</body>
+
+</html> 

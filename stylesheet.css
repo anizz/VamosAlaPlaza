@@ -1,0 +1,769 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: lexend, sans-serif;
+}
+
+
+.header {
+    background-color: #386641;
+    height: 120px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logotipo Vamos a la plaza.com*/
+
+.logo img {
+    height: 90px;
+    width: auto;
+    margin-left: 40px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover img{
+    transform: scale(1.05);
+    filter:brightness(1.1);
+    
+}
+
+
+/* SECCIÓN Menu NAV*/
+
+.navegador ul{
+    display: flex;
+    gap: 100px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+   
+}
+
+.navegador ul li {
+    padding: 8px 16px; /*el tamaño del "contenedor invisible" que se teñirá con el hover*/
+    border-radius: 20px; /* está transparente entonces cuando aparece el hover, se rellena con el color de la pseudoclase*/
+    transition: 0.3s;
+}
+
+.navegador ul li:hover {
+  background-color: rgba(1, 180, 187, 0.1);
+  color: #01b4bb;
+}
+
+/* SECCIÓN Login*/
+
+.login {
+    width: 90px;
+    height: 90px;   
+    margin-right: 40px;
+}
+
+.login-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* esto lo que simula es la "moneda" sino no se percibe la cara de "abajo"*/
+    transition: transform 0.6s;
+}
+
+/* EL HOVER VA ACÁ */
+.login:hover .login-inner {
+    transform: rotateY(180deg);
+}
+
+.foto {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* frente */
+.frente {
+    transform: rotateY(0deg);
+}
+
+/* dorso */
+.dorso {
+    transform: rotateY(180deg);
+}
+
+
+
+.hero {
+    background-image: url(./Imagenes/image_hero_alt.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 800px;
+    width: 100vw;  
+    position: relative;     
+    
+}
+
+.hero_title {
+    width: auto;
+    background-color: #EACF41;
+    opacity: 0.7;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 2.5rem;
+    padding: 30px 50px;
+    border-top-right-radius: 100px ;
+
+}
+
+
+main {
+    /*background-color: #efaeae;*/
+    height: auto;
+    width: 100vw;
+}
+
+/* SECCIÓN Filtros */
+
+
+.filters {
+    /*background-color: #eee461;*/
+    height: 500px;
+    width: 100vw;
+}
+
+
+.tituloFiltros {
+    font-size: 3.5rem;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 110px;
+    padding-bottom: 50px;
+    display:flex;
+    justify-content: center;
+}
+
+
+.opcionesFiltros {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.3rem;
+}
+
+
+.barraBuscador {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+
+select {
+    width: 200px;
+    height: 85px;
+    border-radius: 80px;
+    border: 1px solid #cccccc;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+    
+}
+
+
+
+select:hover {
+    border: 1px solid #555555;
+    background-color: rgba(173, 173, 173, 0.1);
+    
+}
+
+
+.barraBuscador input{
+    width: 600px;
+    height: 85px;
+    border-radius: 80px;
+    border: 1px solid #cccccc;
+    padding-left: 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+
+.buscador:hover input {
+    border: 1px solid #555555;
+    background-color: rgba(173, 173, 173, 0.1);
+   
+   
+}
+
+
+
+
+input::placeholder {
+    color: #000000;
+    font-family: lexend, sans-serif;
+    font-weight: lighter;
+    font-size: 1.3rem;
+}
+
+
+.buscador {
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    gap: 20px;
+    position:relative;
+   
+}
+
+
+#buscarPlaza {
+    position: absolute; 
+    border: none;
+    background: none;
+    font-size: 2rem;
+    cursor:pointer;
+    margin-right: 20px;
+    filter:grayscale(100%);
+   
+    
+}
+
+
+
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  
+/*como puedo alinear el check box con el texto? Puedo usar display: flex en el contenedor del checkbox y el texto, y luego usar align-items: center para alinear verticalmente el checkbox con el texto. */
+     
+}
+
+
+
+.opcionesFiltros label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+/* SECCIÓN Espacios */
+
+
+.espacios {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* puedo usar GAP para darle el espacio entre las cards, pero no me va a dar el mismo espacio entre el borde del contenedor y la primera card, que entre las cards. Para eso tengo que usar justify-content: space-evenly, que me va a dar el mismo espacio entre las cards, y entre el borde del contenedor y la primera card. */
+    height: 600px;
+
+    
+}
+
+
+.espacioIzquierda {
+    background-color: #F1EE9D;
+    height: 400px;
+    width: 595px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+    gap: 30px;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+#VerMas {
+    
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    border: none;
+    background-color: #A7C957;
+    cursor: pointer;
+}
+
+#VerMas:hover{
+    background-color: #2a4e31;
+    color: #ffffff;
+    font-weight: bold;
+
+}
+
+.espacioDerecha {
+    /*background-image:url(./Imagenes/ejemplo_derecha.jpg);*/
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 595px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow: hidden;
+}
+
+.espacioDerecha ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    width: 300%;
+    animation: moverSildes 8s infinite alternate;
+}
+
+.espacioDerecha li{
+    width: 595px;
+    height: 400px;
+}
+
+.espacioDerecha li img {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+@keyframes moverSildes {
+    0% {
+        transform: translate(0);
+    }
+
+    15% {
+        transform: translate(0);
+    }
+    
+    30% {
+        transform: translate(-595px);
+    }
+
+    45% {
+        transform: translate(-595px);
+    }
+
+    55% {
+        transform: translate(-595px);
+    }
+
+    70% {
+        transform: translate(-1190px);
+    }
+
+    85% {
+        transform: translate(-1190px);
+    }
+
+    100% {
+        transform: translate(-1190px);
+    }
+    
+}
+
+/* SECCIÓN Opciones salidas*/
+
+.opcionesSalidas {
+    width: 1150px;
+    height: 500px;
+    /*background-color: #1d1da2;*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*padding-left:144px;*/
+    grid-template-rows: 130px 370px;
+    margin: 0 auto;
+    
+
+}
+
+.tituloCard {
+    grid-column: 1 / 5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+ 
+}
+
+
+.cardOpcion {
+    background-color: #A7C957;
+    height: 280px;
+    width: 250px;
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    gap: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cardOpcion:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 0px 4px 5px 2px rgba(0,0,0,0.2);
+
+}
+
+
+.relajar {
+    background-image:linear-gradient(rgba(255, 0, 855, 0.4), rgba(255, 0, 85, 0.4)), url(./Imagenes/relajar.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+
+
+.chicos {
+    background-image: linear-gradient(rgba(255, 168, 6, 0.3), rgba(225, 168, 6, 0.3)), url(./Imagenes/chicos.jpg);
+    background-size:cover;
+    cursor: pointer;
+}
+
+
+.deporte{
+    background-image: linear-gradient(rgba(21, 27, 194, 0.3), rgba(21, 27, 194, 0.3)), url(./Imagenes/mujercorre.jpg);
+    background-size: cover;
+    cursor: pointer;
+
+}
+
+
+.mascotas {
+    background-image: linear-gradient(rgba(0, 255, 110, 0.4), rgba(0, 255, 110, 0.4)), url(./Imagenes/perro.jpg);
+    background-size:cover;
+    cursor: pointer;
+}
+
+
+.cardOpcion p {
+    font-size: 2.5rem;
+    text-align: center;
+    color:#ffffff;
+    font-weight: 700;
+    letter-spacing:0cm;
+    
+}
+
+
+/* SECCION CARDS PLAZAS*/
+
+
+.seccionPlazas {
+    width: 1150px;
+    /*background-color: #1d1da2;*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*padding-left:144px;*/
+    grid-template-rows: 130px 420px;
+    margin: 0 auto 100px;
+    position: relative;
+}
+
+
+#next_button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    z-index: 10;
+    border-radius: 20px;
+    border-color: #cccccc;
+    transition: transform 0.3s;
+
+}
+
+#next_button:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+    
+
+}
+
+.plaza {
+
+    background-color: #ffffff;
+    width: 250px;
+    height: auto;
+    gap: 40px;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+}
+
+
+
+.fotoPlaza1 {
+    height: 280px;
+    width: 250px;
+    border-radius: 20px;
+    background-image: url(./Imagenes/plaza_1.jpeg);
+    background-size: cover;
+    filter: grayscale(50%);
+    position: relative;
+    
+}
+
+.fotoPlaza1:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+
+}
+
+
+.fotoPlaza2 {
+    height: 280px;
+    width: 250px;
+    border-radius: 20px;
+    background-image: url(./Imagenes/plaza_2.jpeg);
+    background-size: cover;
+    filter: grayscale(50%);
+}
+
+.fotoPlaza2:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+
+}
+
+
+.fotoPlaza3 {
+    height: 280px;
+    width: 250px;
+    border-radius: 20px;
+    background-image: url(./Imagenes/plaza_3.jpeg);
+    background-size: cover;
+    filter: grayscale(50%);
+}
+
+.fotoPlaza3:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+
+}
+
+
+.fotoPlaza4 {
+    height: 280px;
+    width: 250px;
+    border-radius: 20px;
+    background-image: url(./Imagenes/plaza_4.jpeg);
+    background-size: cover;
+    filter: grayscale(50%);
+}
+
+
+.fotoPlaza4:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+
+}
+
+.favorito {
+    width: 40px;
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: 200px;
+    filter: grayscale(100%);
+
+}
+
+.fotoPlaza1 i {
+    font-size: 40px;
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: 190px;
+}
+
+
+
+
+.favorito:active {
+    filter: saturate(100%);
+
+
+}
+
+.nombrePlaza {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+
+.rating {
+  color: gold;
+  font-size: 1.5rem;
+  padding-top: 20px;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #A7C957;
+    width: 100%;
+    height: 250px;
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr 200px;
+    grid-template-rows: 2fr 1fr;
+     
+}
+
+
+.col {
+    justify-self: center;
+    
+    
+}
+
+.primera {
+    grid-column: 2;
+    grid-row: 1;
+
+}
+
+.segunda {
+    grid-column: 3;
+    grid-row: 1;
+
+}
+
+
+.tercera {
+    grid-column: 4;
+    grid-row: 1;
+
+}
+
+
+.col h1 {
+    font-size: 1.4rem;
+    cursor: pointer;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    
+}
+
+
+.col p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+
+
+.col ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+
+.col ul li {
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+
+
+.col h1:hover, .col p:hover, .col ul li:hover {
+    text-decoration: underline;
+}
+
+
+
+.redes {
+    width: 100%;
+    height: 50px;
+    grid-column: 4;
+    grid-row: 2;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    
+
+}
+
+.redes ul {
+
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+    width: 100px;
+    justify-self: end;
+    cursor: pointer;
+    
+    
+}
+
+.redes ul li i {
+    font-size: 40px;
+}
+
+.redes li img {
+    width: 40px;
+    
+}
+
+.redes li {
+    transition: 0.3s;
+}
+
+
+.redes li:hover {
+    /*filter: invert(0.7);*/
+    color: #ffffff;
+
+}
+
+/* MEDIA QUERY ----- ESTAS SON LAS PROPORCIONES MÁS COMUNES*/ 
+
+@media (max-width:900px){
+   
+}
+
+@media (max-width:690px){
+
+
+}
+
+@media (max-width:385px){
+
+
+}
+
+
+
