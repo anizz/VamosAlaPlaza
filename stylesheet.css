@@ -78,6 +78,7 @@ body {
     position: relative;
     transform-style: preserve-3d; /* esto lo que simula es la "moneda" sino no se percibe la cara de "abajo"*/
     transition: transform 0.6s;
+    cursor: pointer;
 }
 
 /* EL HOVER VA ACÁ */
